@@ -6,6 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
@@ -20,9 +21,16 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
+[workflows.workflow.metadata]
+outputType = "webview"
+run = "python3 app.py"
+
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python app.py"
+waitForPort = 5000
 
-[workflows.workflow.metadata]
-outputType = "console"
+[[ports]]
+localPort = 5000
+externalPort = 80
+
