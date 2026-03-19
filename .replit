@@ -6,7 +6,6 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
-runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
@@ -23,7 +22,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python OOPclass.py"
+args = "python app.py"
 
 [workflows.workflow.metadata]
 outputType = "console"
